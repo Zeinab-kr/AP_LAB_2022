@@ -10,6 +10,7 @@ public class Address {
         this.zipCode = ((zipCode.equals("-")) ? null : zipCode);
     }
 
+    @Override
     public String toString() {
         return "Email: " + ((zipCode == null) ? "no email!" : zipCode) + "\n"
                 + "Country: " + ((country == null) ? "no country!" : country) + "\n"

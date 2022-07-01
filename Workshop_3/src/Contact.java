@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Contact {
     private String group;
     private String email;
@@ -14,6 +16,17 @@ public class Contact {
         this.address = address;
         this.group = (group.equals("-") ? null : group);
         this.email = (email.equals("-") ? null : email);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        Contact contact = (Contact) o;
+        return Objects.equals(group, contact.group)
+                && Objects.equals(email, contact.email)
+                && Objects.equals(firstname, contact.firstname)
+                && Objects.equals(lastname, contact.lastname)
+                && Objects.equals(phoneNumber, contact.phoneNumber)
+                && Objects.equals(address, contact.address);
     }
 
     public void setLastname(String lastname) {
