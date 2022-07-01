@@ -6,8 +6,8 @@ public class Address {
     // constructor
     public Address(String zipCode, String country, String city) {
         this.city = ((city.equals("-")) ? null : city);
-        this.country = ((country.equals("-")) ? null : country);
-        this.zipCode = ((zipCode.equals("-")) ? null : zipCode);
+        this.country = ((country.equals("")) ? null : country);
+        this.zipCode = ((zipCode.equals("")) ? null : zipCode);
     }
 
     @Override

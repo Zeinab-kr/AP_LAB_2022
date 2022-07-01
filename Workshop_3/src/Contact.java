@@ -14,8 +14,8 @@ public class Contact {
         this.lastname = lastname;
         this.phoneNumber = phoneNumber;
         this.address = address;
-        this.group = (group.equals("-") ? null : group);
-        this.email = (email.equals("-") ? null : email);
+        this.group = (group.equals("") ? null : group);
+        this.email = (email.equals("") ? null : email);
     }
 
     @Override

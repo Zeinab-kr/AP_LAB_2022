@@ -1,14 +1,10 @@
-import jdk.jfr.BooleanFlag;
-
-import java.util.Scanner;
-
 public class PhoneBook {
     private int size;
     private Contact[] contacts = new Contact[size];
     private int currentNumber = 0;
 
-    public PhoneBook(Contact[] contacts) {
-        this.contacts = contacts;
+    public PhoneBook(int size) {
+        this.size = size;
     }
 
     public boolean addContact(Contact contact) {
@@ -29,6 +25,7 @@ public class PhoneBook {
             contacts[i] = contacts[i + 1];
             contacts[i + 1] = null;
         }
+        return true;
     }
 
     public Contact findContact(String firstname, String lastname) {
@@ -63,6 +60,7 @@ public class PhoneBook {
                 return i;
             }
         }
+        return -1;
     }
 
     public void printContacts() {
@@ -75,5 +73,29 @@ public class PhoneBook {
             + "    Address:" + ((contacts[i].getAddress() == null) ? "no address" : contacts[i].getAddress()) + "\n"
             + "    Group:" + ((contacts[i].getGroup() == null) ? "no group" : contacts[i].getGroup()) + "\n\n");
         }
+    }
+
+    public void printContact(Contact contact) {
+        System.out.println(
+                  "First Name: " + contact.getFirstname() + "\n"
+                + "Last Name: " + contact.getLastname() + "\n"
+                + "Phone Number: " + contact.getPhoneNumber() + "\n"
+                + "Email: " + ((contact.getEmail() == null) ? "no email" : contact.getEmail()) + "\n"
+                + "Address:" + ((contact.getAddress() == null) ? "no address" : contact.getAddress()) + "\n"
+                + "Group:" + ((contact.getGroup() == null) ? "no group" : contact.getGroup()) + "\n\n");
+    }
+    public void printContacts(Contact[] contacts) {
+        for (int i = 0; i < contacts.length; i++) {
+            System.out.println(
+                      "    First Name: " + contacts[i].getFirstname() + "\n"
+                    + "    Last Name: " + contacts[i].getLastname() + "\n"
+                    + "    Phone Number: " + contacts[i].getPhoneNumber() + "\n"
+                    + "    Email: " + ((contacts[i].getEmail() == null) ? "no email" : contacts[i].getEmail()) + "\n"
+                    + "    Address:" + ((contacts[i].getAddress() == null) ? "no address" : contacts[i].getAddress()) + "\n");
+        }
+    }
+
+    public int getSize() {
+        return size;
     }
 }
