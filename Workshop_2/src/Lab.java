@@ -23,6 +23,13 @@ public class Lab {
 
     public void enrollStudent(Student student) {
         students[currentSize] = student;
+    }
+
+    public void printLabInfo() {
+        System.out.println("\nteacher name: " + teacherName +
+                "\nday of week: " + dayOfWeek +
+                "\nMax size student: " + maxSize);
+    }
 
     // setters
     public void setTeacherName(String teacherName) {
