@@ -27,8 +27,9 @@ public class Vote {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Vote that)) return false;
-        return Objects.equals(voter, that.voter) && Objects.equals(date, that.date);
+        if (!(o instanceof VotingSystem)) return false;
+        VotingSystem that = (VotingSystem) o;
+        return Objects.equals(((VotingSystem) o).getVotingList(), that.getVotingList());
     }
 
     @Override

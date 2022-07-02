@@ -1,11 +1,11 @@
-import java.security.SecureRandom;
+import java.util.Random;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 
 public class Voting {
 
-    SecureRandom rand = new SecureRandom();
+    Random rand = new Random();
     private int type;
     private String question;
     private HashMap<String, HashSet<Vote>> choices;
@@ -22,7 +22,6 @@ public class Voting {
         this.voters = new ArrayList<>();
 
     }
-
 
     public void setType(int type) {
         this.type = type;
@@ -69,7 +68,7 @@ public class Voting {
 
     public void createChoice(String choice) {
         y = new HashSet<>();
-        choices.put(choice, y); //choices.replace( ! , ! )
+        choices.put(choice, y);
     }
 
 
@@ -103,7 +102,7 @@ public class Voting {
         System.out.println("\nQuestion: " + getQuestion() + "\n");
         if (getIsAnonymous()) {
             for (String p: choices.keySet()) {
-                System.out.println(p + "  ---> " + choices.get(p).size());
+                System.out.println(p + " ---> " + choices.get(p).size());
             }
         }
         else {
