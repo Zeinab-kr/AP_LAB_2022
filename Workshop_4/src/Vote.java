@@ -1,20 +1,26 @@
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 public class Vote {
 
     private final Person voter;
-    private final String date;
+    private final LocalDateTime date;
 
-    public Vote(Person voter, String  date) {
+    public Vote(Person voter, LocalDateTime date) {
         this.voter = voter;
         this.date = date;
+    }
+
+    public Vote(Person voter) {
+        this.voter = voter;
+        date = LocalDateTime.now();
     }
 
     public Person getVoter() {
         return voter;
     }
 
-    public String getDate() {
+    public LocalDateTime getDate() {
         return date;
     }
 
